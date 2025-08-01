@@ -1,0 +1,121 @@
+<style>
+  .request-hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(30,64,128,0.7), rgba(30,64,128,0.7)),
+      url('https://img.freepik.com/free-photo/front-view-nurse-talking-patient_23-2149741269.jpg?semt=ais_hybrid&w=740&q=80')
+      center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .request-hero-content {
+    max-width: 900px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .request-hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .request-hero-content h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .request-hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .request-hero-content p:last-of-type {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .request-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .request-hero-buttons a {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .request-hero-buttons .primary {
+    background-color: #3366ff;
+    color: #ffffff;
+  }
+
+  .request-hero-buttons .secondary {
+    background-color: #ffffff;
+    color: #3366ff;
+  }
+
+  @media (max-width: 600px) {
+    .request-hero {
+      min-height: 80vh;
+      padding: 24px 16px;
+    }
+
+    .request-hero-content h1 {
+      font-size: 1.75rem;
+    }
+
+    .request-hero-content h2 {
+      font-size: 1.2rem;
+    }
+
+    .request-hero-content p {
+      font-size: 1rem;
+    }
+
+    .request-hero-content p:last-of-type {
+      font-size: 0.95rem;
+    }
+
+    .request-hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .request-hero-buttons a {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="request-hero">
+  <div class="request-hero-content">
+    <h1>Request Qualified Nursing Professionals</h1>
+    <h2>Professional Healthcare Recruitment Services for BC Facilities</h2>
+    <p>
+      Submit your nursing staffing requirements and our recruitment specialists will develop a comprehensive strategy to find qualified candidates for your healthcare facility.
+    </p>
+    <p><strong>Licensed BC Agency &bull; Comprehensive Screening &bull; Professional Process &bull; Quality Candidates</strong></p>
+    <div class="request-hero-buttons">
+      <a href="#request-nursing-form" class="primary">Submit Staffing Request</a>
+      <a href="tel:7786530412" class="secondary">Call (778) 653‑0412</a>
+    </div>
+  </div>
+</section>

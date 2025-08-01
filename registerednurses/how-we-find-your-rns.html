@@ -1,0 +1,129 @@
+<section class="recruitment-section" style="padding: 80px 20px; background-color: #f6faff; font-family: 'Source Sans Pro', sans-serif;">
+  <style>
+    .recruitment-section h2 {
+      font-size: 2.25rem;
+      color: #3366ff;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .recruitment-section p.subheading {
+      font-size: 1.125rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .step-card img {
+      width: 40px;
+      margin-bottom: 15px;
+    }
+
+    .step-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      font-size: 0.95rem;
+      color: #444;
+      margin: 0;
+    }
+
+    /* Step 7 spans all columns on desktop */
+    .step-card.step-7 {
+      grid-column: span 3;
+    }
+
+    /* Tablet: 2 cards per row */
+    @media (max-width: 1024px) {
+      .step-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .step-card.step-7 {
+        grid-column: span 2;
+      }
+    }
+
+    /* Mobile: single column layout */
+    @media (max-width: 640px) {
+      .step-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step-card {
+        text-align: left;
+      }
+
+     .step-card img {
+  display: block;
+  margin: 0 auto 15px auto; /* Centers the icon */
+}
+
+
+      .step-card.step-7 {
+        grid-column: span 1;
+      }
+    }
+  </style>
+
+  <h2>Proven 7-Step Process for RN Recruitment Success</h2>
+  <p class="subheading">Our structured methodology ensures successful RN placement with qualified candidates and minimal risk.</p>
+
+  <div class="step-grid">
+    <div class="step-card">
+      <img src="https://img.icons8.com/ios-filled/50/3366ff/document--v1.png" alt="Discovery" />
+      <h3>01. Discovery & Assessment</h3>
+      <p>Evaluate RN needs, patient acuity, infrastructure, and team input to define scope.</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/ios-filled/50/3366ff/strategy-board.png" alt="Strategy" />
+      <h3>02. Strategy & Planning</h3>
+      <p>Build roadmap, source strategy, recruitment timeline, and candidate profiles.</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/ios-filled/50/3366ff/resume.png" alt="Sourcing" />
+      <h3>03. Sourcing & Screening</h3>
+      <p>Source, screen, validate credentials, and assess clinical competencies.</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/ios-filled/50/3366ff/conference-call.png" alt="Interview" />
+      <h3>04. Candidate Presentation & Interview</h3>
+      <p>Present candidates, coordinate interviews, and support selection.</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/ios-filled/50/3366ff/approve-and-update.png" alt="Verification" />
+      <h3>05. Verification & Compliance</h3>
+      <p>Confirm BCCNM registration, run checks, and prepare documentation.</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/ios-filled/50/3366ff/add-user-group-man-man.png" alt="Onboarding" />
+      <h3>06. Onboarding & Orientation</h3>
+      <p>Deliver training materials, assist with orientation, and ensure readiness.</p>
+    </div>
+    <div class="step-card step-7">
+      <img src="https://img.icons8.com/ios-filled/50/3366ff/customer-support.png" alt="Support" />
+      <h3>07. Post-Placement Support</h3>
+      <p>Monitor placement success, address feedback, and support future staffing needs.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,122 @@
+<style>
+  .network-hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(30,64,128,0.7), rgba(30,64,128,0.7)),
+      url('https://static.vecteezy.com/system/resources/previews/029/607/481/non_2x/group-of-diverse-medical-professionals-in-scrubs-free-photo.jpg')
+      center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .network-hero-content {
+    max-width: 900px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .network-hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .network-hero-content h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .network-hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .network-hero-content p:last-of-type {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .network-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .network-hero-buttons a {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .network-hero-buttons .primary {
+    background-color: #3366ff;
+    color: #ffffff;
+  }
+
+  .network-hero-buttons .secondary {
+    background-color: #ffffff;
+    color: #3366ff;
+  }
+
+  @media (max-width: 600px) {
+    .network-hero {
+      min-height: 80vh;
+      padding: 24px 16px;
+    }
+
+    .network-hero-content h1 {
+      font-size: 1.75rem;
+    }
+
+    .network-hero-content h2 {
+      font-size: 1.2rem;
+    }
+
+    .network-hero-content p {
+      font-size: 1rem;
+    }
+
+    .network-hero-content p:last-of-type {
+      font-size: 0.95rem;
+    }
+
+    .network-hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .network-hero-buttons a {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  }
+</style>
+
+<section class="network-hero">
+  <div class="network-hero-content">
+    <h1>Join Our Healthcare Professional Network</h1>
+    <h2>Submit Your Nursing Profile for Quality Healthcare Opportunities</h2>
+    <p>
+      Register with BC's professional healthcare recruitment network for access to competitive nursing positions across hospitals, clinics, and healthcare facilities.
+    </p>
+    <p><strong>Competitive rates • Flexible scheduling • Professional growth • Quality facilities</strong></p>
+    <div class="network-hero-buttons">
+      <a href="#submit-nursing-form" class="primary">Start Your Profile</a>
+      <a href="tel:7786530412" class="secondary">Call (778) 653‑0412</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,229 @@
+<!--
+Responsive vertical timeline:
+- All inline styles are moved to CSS classes for maintainability.
+- Uses media queries to adapt paddings, font sizes, positioning, and timeline visuals for mobile.
+- Desktop/PC visuals and content are preserved.
+- On mobile, the timeline shrinks, steps and circles are closer, offsets adapt for small screens.
+-->
+
+<section class="np-timeline-section">
+  <div class="np-timeline-container">
+
+    <!-- Header -->
+    <div class="np-timeline-header">
+      <h2>
+        How We Find the Right Nurse Practitioners for Your Practice
+      </h2>
+      <p>
+        Specialized recruitment strategy targeting qualified advanced practice nurses across multiple specialty areas
+      </p>
+    </div>
+
+    <!-- Vertical line -->
+    <div class="np-timeline-line"></div>
+
+    <!-- Steps -->
+    <div class="np-timeline-steps">
+
+      <!-- STEP 1 -->
+      <div class="np-timeline-step">
+        <div class="np-timeline-circle">1</div>
+        <div class="np-timeline-step-content">
+          <h3>New NP Graduates</h3>
+          <p><strong>Target:</strong> Recent Master's graduates from NP programs seeking first advanced practice positions</p>
+          <p><strong>Sources:</strong> UBC, Trinity Western, University of Northern BC, and other accredited NP programs</p>
+          <p><strong>Benefits:</strong> Current knowledge, fresh training, enthusiasm for advanced practice, technology proficiency</p>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="np-timeline-step">
+        <div class="np-timeline-circle">2</div>
+        <div class="np-timeline-step-content">
+          <h3>Experienced Advanced Practice Nurses</h3>
+          <p><strong>Target:</strong> Established NPs seeking new practice opportunities, specialty changes, or geographic relocation</p>
+          <p><strong>Sources:</strong> Current NPs in other practices, specialty transitions, practice model changes</p>
+          <p><strong>Benefits:</strong> Proven experience, established patient care skills, practice efficiency, mentorship capabilities</p>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="np-timeline-step">
+        <div class="np-timeline-circle">3</div>
+        <div class="np-timeline-step-content">
+          <h3>Specialty Practice Transitions</h3>
+          <p><strong>Target:</strong> NPs seeking to transition between specialty areas or expand practice scope</p>
+          <p><strong>Sources:</strong> Family NPs moving to specialty practice, specialty NPs seeking broader scope</p>
+          <p><strong>Benefits:</strong> Advanced practice experience, adaptability, specialty knowledge, scope expansion</p>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="np-timeline-step">
+        <div class="np-timeline-circle">4</div>
+        <div class="np-timeline-step-content">
+          <h3>Physician-Collaborative Seekers</h3>
+          <p><strong>Target:</strong> NPs seeking collaborative practice models with physician partnerships</p>
+          <p><strong>Sources:</strong> Independent practitioners seeking collaboration, hospital NPs wanting clinic practice</p>
+          <p><strong>Benefits:</strong> Collaborative mindset, interprofessional skills, practice model flexibility</p>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="np-timeline-step">
+        <div class="np-timeline-circle">5</div>
+        <div class="np-timeline-step-content">
+          <h3>Independent Practice Entrepreneurs</h3>
+          <p><strong>Target:</strong> Experienced NPs interested in independent or semi-independent practice opportunities</p>
+          <p><strong>Sources:</strong> Business-minded NPs, entrepreneurial advanced practice nurses, leadership-oriented professionals</p>
+          <p><strong>Benefits:</strong> Leadership skills, business acumen, patient care innovation, practice development</p>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div class="np-timeline-step">
+        <div class="np-timeline-circle">6</div>
+        <div class="np-timeline-step-content">
+          <h3>Rural and Remote Specialists</h3>
+          <p><strong>Target:</strong> NPs with experience or interest in rural and remote healthcare delivery</p>
+          <p><strong>Sources:</strong> Rural health specialists, community health NPs, northern practice professionals</p>
+          <p><strong>Benefits:</strong> Rural expertise, independence, community integration, comprehensive care skills</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.np-timeline-section {
+  padding: 100px 20px;
+  background: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.np-timeline-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 80px;
+}
+.np-timeline-header {
+  text-align: left;
+  margin-bottom: 60px;
+}
+.np-timeline-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #3366ff;
+  margin-bottom: 15px;
+}
+.np-timeline-header p {
+  font-size: 1.125rem;
+  color: #4a4a4a;
+}
+.np-timeline-line {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  bottom: 0;
+  width: 4px;
+  background: #e0e7ff;
+  z-index: 0;
+}
+.np-timeline-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  position: relative;
+}
+.np-timeline-step {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+.np-timeline-circle {
+  position: absolute;
+  left: 0;
+  transform: translateY(-5px);
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  background: #3366ff;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.np-timeline-step-content {
+  margin-left: 100px;
+  max-width: 900px;
+}
+.np-timeline-step-content h3 {
+  color: #3366ff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Responsive for tablets and mobile */
+@media (max-width: 900px) {
+  .np-timeline-section {
+    padding: 60px 6px;
+  }
+  .np-timeline-header {
+    margin-bottom: 35px;
+  }
+  .np-timeline-header h2 {
+    font-size: 1.5rem;
+  }
+  .np-timeline-header p {
+    font-size: 1rem;
+  }
+  .np-timeline-container {
+    padding-left: 38px;
+  }
+  .np-timeline-line {
+    left: 16px;
+    width: 3px;
+  }
+  .np-timeline-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  .np-timeline-step-content {
+    margin-left: 60px;
+    max-width: 95vw;
+  }
+  .np-timeline-steps {
+    gap: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .np-timeline-section {
+    padding: 36px 2px;
+  }
+  .np-timeline-header h2 {
+    font-size: 1.05rem;
+  }
+  .np-timeline-header p {
+    font-size: 0.95rem;
+  }
+  .np-timeline-line {
+    left: 9px;
+    width: 2px;
+  }
+  .np-timeline-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+  .np-timeline-step-content {
+    margin-left: 32px;
+    max-width: 99vw;
+  }
+}
+</style>
