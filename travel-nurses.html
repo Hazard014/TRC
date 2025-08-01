@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Nurses BC | Short-Term Healthcare Assignments | Top Recruitment</title>
+  <meta name="description" content="Travel nurse recruitment in BC. Short-term assignments for emergency coverage, rural placements, temporary healthcare solutions. Professional screening and housing coordination.">
+
+  <!-- Responsive Typography & Layout -->
+  <style>
+    /* Base Reset & Typography */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #ffffff;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 1rem 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+    }
+
+    /* Heading Sizes for Desktop */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    /* Container Padding */
+    div[data-include-html] {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Responsive Adjustments for Tablets & Phones */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; }
+
+      div[data-include-html] {
+        padding: 24px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      div[data-include-html] {
+        padding: 20px 14px;
+      }
+
+      a.button, button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+    }
+
+    /* Button Styling (if buttons exist in sections) */
+    a.button, button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Hero -->
+  <div data-include-html="travelnurses/travel-hero.html"></div>
+
+  <!-- Section 2: Scope -->
+  <div data-include-html="travelnurses/what-are-travel-nurses.html"></div>
+
+  <!-- Section 3: Licensing -->
+  <div data-include-html="travelnurses/travel-nurse-qualifications.html"></div>
+
+  <!-- Section 4: Process -->
+  <div data-include-html="travelnurses/how-we-find-travel-nurses.html"></div>
+
+  <!-- Section 5: Quality Standards -->
+  <div data-include-html="travelnurses/our-travel-nurse-quality.html"></div>
+
+  <!-- Section 6: Recruitment Strategy -->
+  <div data-include-html="travelnurses/our-travel-nurse-recruitment-strategy.html"></div>
+
+  <!-- Section 7: Advantage -->
+  <div data-include-html="travelnurses/our-travel-nurse-advantage.html"></div>
+
+  <!-- Section 8: CTA -->
+  <div data-include-html="travelnurses/start-your-travel-nurse-recruitment.html"></div>
+
+  <!-- HTML Include Loader Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[data-include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('data-include-html');
+        if (file) {
+          fetch(file)
+            .then(res => res.ok ? res.text() : Promise.reject('Section not found'))
+            .then(data => {
+              el.innerHTML = data;
+              el.removeAttribute('data-include-html');
+            });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BC Nurse Practitioners | NP Recruitment & Advanced Practice | Top Recruitment</title>
+  <meta name="description" content="Nurse practitioner recruitment in BC. Master's-prepared advanced practice nurses with prescriptive authority for primary care, specialty clinics, independent practice. BCCNM registered.">
+
+  <!-- Responsive Styles -->
+  <style>
+    /* Reset & Base */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #ffffff;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    /* Section Wrapper */
+    div[data-include-html] {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Button Style (for CTAs in includes) */
+    a.button, button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; }
+
+      div[data-include-html] {
+        padding: 24px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 1rem;
+      }
+
+      h1, h2, h3, p, li {
+        text-align: left !important;
+      }
+
+      div[data-include-html] {
+        padding: 20px 14px;
+      }
+
+      a.button, button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Section 1: Hero -->
+  <div data-include-html="nursepractitioners/np-hero.html"></div>
+
+  <!-- Section 2: Scope of Practice -->
+  <div data-include-html="nursepractitioners/what-nurse-practitioners-do.html"></div>
+
+  <!-- Section 3: NP Qualifications -->
+  <div data-include-html="nursepractitioners/np-qualifications.html"></div>
+
+  <!-- Section 4: Recruitment Process -->
+  <div data-include-html="nursepractitioners/how-we-find-nps.html"></div>
+
+  <!-- Section 5: NP Quality Standards -->
+  <div data-include-html="nursepractitioners/our-np-quality-standards.html"></div>
+
+  <!-- Section 6: NP Recruitment Strategy -->
+  <div data-include-html="nursepractitioners/our-np-recruitment-strategy.html"></div>
+
+  <!-- Section 7: NP Advantage -->
+  <div data-include-html="nursepractitioners/our-np-recruitment-advantage.html"></div>
+
+  <!-- Section 8: Final CTA -->
+  <div data-include-html="nursepractitioners/start-your-np-recruitment.html"></div>
+
+  <!-- HTML Includes Loader -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const includeElements = document.querySelectorAll('[data-include-html]');
+      includeElements.forEach(el => {
+        const file = el.getAttribute("data-include-html");
+        if (file) {
+          fetch(file)
+            .then(response => response.ok ? response.text() : 'Section not found.')
+            .then(data => {
+              el.innerHTML = data;
+              el.removeAttribute("data-include-html");
+            });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

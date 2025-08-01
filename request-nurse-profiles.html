@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Nursing Recruitment Services | Healthcare Staffing | Top Recruitment</title>
+  <meta name="description" content="Request qualified nursing professionals for your healthcare facility. Professional recruitment services for RNs, LPNs, NPs, travel nurses, psychiatric nurses. Licensed BC agency.">
+
+  <!-- Responsive Global Styles -->
+  <style>
+    /* Base Reset */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    /* Section Wrapper */
+    div[data-include-html] {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Button Styling */
+    a.button, button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; }
+
+      div[data-include-html] {
+    padding: 0;
+    box-sizing: border-box;
+  }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 1rem;
+      }
+
+      h1, h2, h3, p, li {
+        text-align: left !important;
+      }
+
+      div[data-include-html] {
+        padding: 20px 14px;
+      }
+
+      a.button, button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+      }
+
+      form input,
+      form select,
+      form textarea {
+        width: 100% !important;
+        font-size: 1rem;
+        padding: 0.6rem;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Section 1: Hero -->
+  <div data-include-html="requestnurseprofiles/request-services-hero.html"></div>
+
+  <!-- Section 2: Eligible Organizations -->
+  <div data-include-html="requestnurseprofiles/healthcare-facilities-we-serve.html"></div>
+
+  <!-- Section 3: Request Process Overview -->
+  <div data-include-html="requestnurseprofiles/staffing-request-process.html"></div>
+
+  <!-- Section 4: Staffing Request Form -->
+  <div data-include-html="requestnurseprofiles/request-nursing-form.html"></div>
+
+  <!-- Section 5: What Happens Next -->
+  <div data-include-html="requestnurseprofiles/after-staffing-request.html"></div>
+
+  <!-- Section 6: Why Choose Us -->
+  <div data-include-html="requestnurseprofiles/recruitment-service-advantages.html"></div>
+
+  <!-- Section 7: Contact -->
+  <div data-include-html="requestnurseprofiles/request-recruitment-contact.html"></div>
+
+  <!-- Include Loader Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[data-include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('data-include-html');
+        if (file) {
+          fetch(file)
+            .then(res => res.ok ? res.text() : Promise.reject('Section not found'))
+            .then(data => {
+              el.innerHTML = data;
+              el.removeAttribute('data-include-html');
+            });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

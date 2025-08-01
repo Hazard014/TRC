@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Nurse Profile | Join Top Recruitment Healthcare Network</title>
+  <meta name="description" content="Submit your nursing profile to join Top Recruitment's healthcare network. Open to RNs, LPNs, NPs, Travel Nurses, and Psychiatric RPNs. Competitive opportunities across BC.">
+
+  <!-- Responsive Styles -->
+  <style>
+    /* Reset & Base */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    /* Section Padding */
+    div[data-include-html] {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Button Styling */
+    a.button, button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; }
+
+      div[data-include-html] {
+        padding: 24px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 1rem;
+      }
+
+      h1, h2, h3, p, li {
+        text-align: left !important;
+      }
+
+      div[data-include-html] {
+        padding: 20px 14px;
+      }
+
+      a.button, button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Section 1: Hero -->
+  <div data-include-html="submitnurseprofile/nurse-application-hero.html"></div>
+
+  <!-- Section 2: Eligible Nurse Types -->
+  <div data-include-html="submitnurseprofile/eligible-nursing-professionals.html"></div>
+
+  <!-- Section 3: Application Process -->
+  <div data-include-html="submitnurseprofile/how-it-works.html"></div>
+
+  <!-- Section 4: Application Form -->
+  <div data-include-html="submitnurseprofile/nurse-profile-application.html"></div>
+
+  <!-- Section 5: Confirmation Modal -->
+  <div data-include-html="submitnurseprofile/modal-confirmation.html"></div>
+
+  <!-- Section 6: Application Support -->
+  <div data-include-html="submitnurseprofile/application-support.html"></div>
+
+  <!-- Include Loader Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[data-include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('data-include-html');
+        if (file) {
+          fetch(file)
+            .then(res => res.ok ? res.text() : Promise.reject('Section not found'))
+            .then(data => {
+              el.innerHTML = data;
+              el.removeAttribute('data-include-html');
+            });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

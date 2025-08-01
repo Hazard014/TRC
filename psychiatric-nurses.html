@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Psychiatric Nurses (RPN) BC | Mental Health Nursing Recruitment | Top Recruitment</title>
+  <meta name="description" content="Psychiatric nurse recruitment in BC. Specialized mental health nurses for psychiatric hospitals, addiction treatment, forensic settings. RPNCE certified, western province specialty."/>
+
+  <!-- Responsive Styling -->
+  <style>
+    /* Reset & Base Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    /* Section Wrapper */
+    div[data-include-html] {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Optional CTA/Button Styles */
+    a.button, button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; }
+
+      div[data-include-html] {
+        padding: 24px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 1rem;
+      }
+
+      h1, h2, h3, p, li {
+        text-align: left !important;
+      }
+
+      div[data-include-html] {
+        padding: 20px 14px;
+      }
+
+      a.button, button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Section 1: Hero -->
+  <div data-include-html="psychiatricnurses/psychiatric-rpn-hero.html"></div>
+
+  <!-- Section 2: Scope -->
+  <div data-include-html="psychiatricnurses/what-psychiatric-nurses-do.html"></div>
+
+  <!-- Section 3: Qualifications -->
+  <div data-include-html="psychiatricnurses/psychiatric-rpn-qualifications.html"></div>
+
+  <!-- Section 4: Recruitment Process -->
+  <div data-include-html="psychiatricnurses/how-we-find-psychiatric-nurses.html"></div>
+
+  <!-- Section 5: Quality Standards -->
+  <div data-include-html="psychiatricnurses/our-psychiatric-rpn-quality-standards.html"></div>
+
+  <!-- Section 6: Recruitment Strategy -->
+  <div data-include-html="psychiatricnurses/our-psychiatric-rpn-recruitment-strategy.html"></div>
+
+  <!-- Section 7: Advantage -->
+  <div data-include-html="psychiatricnurses/our-psychiatric-rpn-recruitment-advantage.html"></div>
+
+  <!-- Section 8: Call to Action -->
+  <div data-include-html="psychiatricnurses/start-your-psychiatric-rpn-recruitment.html"></div>
+
+  <!-- HTML Include Handler Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const includes = document.querySelectorAll('[data-include-html]');
+      includes.forEach(el => {
+        const file = el.getAttribute('data-include-html');
+        if (file) {
+          fetch(file)
+            .then(res => res.ok ? res.text() : Promise.reject('Section not found'))
+            .then(data => {
+              el.innerHTML = data;
+              el.removeAttribute('data-include-html');
+            });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

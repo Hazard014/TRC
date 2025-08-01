@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BC Licensed Practical Nurses | LPN Staffing & Recruitment | Top Recruitment</title>
+  <meta name="description" content="LPN staffing in BC. Licensed practical nurses for stable patients, long-term care, wound care, medication administration. REx-PN certified, available 24/7. Call (778) 653-0412."/>
+
+  <!-- Responsive Styling -->
+  <style>
+    /* Base Reset & Typography */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #ffffff;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 1rem 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+    }
+
+    /* Heading Sizes for Desktop */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    /* Section Padding */
+    div[data-include-html] {
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* Responsive Adjustments for Tablets & Phones */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; }
+
+      div[data-include-html] {
+        padding: 24px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      div[data-include-html] {
+        padding: 20px 14px;
+      }
+
+      a.button, button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+    }
+
+    /* Button Styling (for included CTAs) */
+    a.button, button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Section 1: Hero -->
+  <div data-include-html="licensedpracticalnurses/lpn-hero.html"></div>
+
+  <!-- Section 2: Scope -->
+  <div data-include-html="licensedpracticalnurses/what-our-lpns-do.html"></div>
+
+  <!-- Section 3: (optional) Licensing -->
+   <div data-include-html="licensedpracticalnurses/lpn-qualifications.html"></div> 
+
+  <!-- Section 4: Process -->
+  <div data-include-html="licensedpracticalnurses/how-we-find-your-lpns.html"></div>
+
+  <!-- Section 5: Quality -->
+  <div data-include-html="licensedpracticalnurses/our-lpn-quality-standards.html"></div>
+
+  <!-- Section 6: Strategy -->
+  <div data-include-html="licensedpracticalnurses/our-lpn-recruitment-strategy.html"></div>
+
+  <!-- Section 7: Advantage -->
+  <div data-include-html="licensedpracticalnurses/our-lpn-recruitment-advantage.html"></div>
+
+  <!-- Section 8: CTA -->
+  <div data-include-html="licensedpracticalnurses/start-your-lpn-recruitment.html"></div>
+
+  <!-- HTML Include Loader Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const includeElements = document.querySelectorAll('[data-include-html]');
+      includeElements.forEach(el => {
+        const file = el.getAttribute("data-include-html");
+        if (file) {
+          fetch(file)
+            .then(response => response.ok ? response.text() : 'Section not found.')
+            .then(data => {
+              el.innerHTML = data;
+              el.removeAttribute("data-include-html");
+            });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

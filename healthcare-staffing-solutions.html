@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Emergency healthcare staffing in BC. Licensed agency providing RNs, LPNs, travel nurses, nurse practitioners. 48-72 hour deployment guarantee. Available 24/7 for crisis coverage." />
+  <title>Healthcare Staffing BC | Emergency Nurses Available 24/7 | Top Recruitment</title>
+
+  <style>
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 5vw, 1.6rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 4.5vw, 1.25rem) !important;
+  }
+
+  p, li {
+    font-size: clamp(0.95rem, 4vw, 1.05rem) !important;
+    line-height: 1.6 !important;
+  }
+
+  @media (max-width: 480px) {
+    h1, h2, h3, p, li {
+      text-align: left !important;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+
+  <!-- Sections from /healthcare-staffing-solutions folder -->
+  <div data-include-html="healthcarestaff/hero.html"></div>
+<div data-include-html="healthcarestaff/immediate-solutions.html"></div>
+<div data-include-html="healthcarestaff/complete-nursing-solutions.html"></div>
+<div data-include-html="healthcarestaff/local-advantage.html"></div>
+<div data-include-html="healthcarestaff/how-we-deploy-nurses.html"></div>
+<div data-include-html="healthcarestaff/licensed-and-insured.html"></div>
+<div data-include-html="healthcarestaff/get-started-today.html"></div>
+
+
+<script>
+  document.querySelectorAll('[data-include-html]').forEach(el => {
+    const file = el.getAttribute('data-include-html');
+    fetch(file)
+      .then(response => {
+        if (!response.ok) throw new Error('Fetch failed');
+        return response.text();
+      })
+      .then(html => el.innerHTML = html)
+      .catch(error => el.innerHTML = "Error loading section.");
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BC Registered Nurses | RN Staffing & Recruitment | Top Recruitment</title>
+  <meta name="description" content="Emergency RN staffing in BC. BSN-prepared registered nurses for ICU, emergency departments, medical-surgical units. BCCNM-verified, available 24/7. Call (778) 653-0412."/>
+
+  <!-- Responsive Styling -->
+  <style>
+    /* Base Reset */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+      background-color: #ffffff;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 1rem 0;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    /* Section Padding */
+    div[data-include-html] {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.0rem; }
+      h3 { font-size: 1.25rem; }
+      h4 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; }
+
+      div[data-include-html] {
+    padding: 0;
+    box-sizing: border-box;
+  }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 0 1rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      h1, h2, h3, p, li {
+        text-align: left !important;
+      }
+
+      .card {
+        padding: 20px !important;
+      }
+
+      a.button, button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.75rem;
+      }
+    }
+
+    /* Optional Button Styling */
+    a.button, button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Section 1: Hero -->
+  <div data-include-html="registerednurses/rn-hero.html"></div>
+  <div data-include-html="registerednurses/what-our-rns-do.html"></div>
+  <div data-include-html="registerednurses/rn-qualifications.html"></div>
+  <div data-include-html="registerednurses/how-we-find-your-rns.html"></div>
+  <div data-include-html="registerednurses/our-rn-quality-standards.html"></div>
+  <div data-include-html="registerednurses/our-rn-recruitment-strategy.html"></div>
+  <div data-include-html="registerednurses/our-rn-recruitment-advantage.html"></div>
+  <div data-include-html="registerednurses/start-your-rn-recruitment.html"></div>
+
+  <!-- Include Loader Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const includeElements = document.querySelectorAll('[data-include-html]');
+      includeElements.forEach(el => {
+        const file = el.getAttribute("data-include-html");
+        if (file) {
+          fetch(file)
+            .then(response => response.ok ? response.text() : 'Section not found.')
+            .then(data => {
+              el.innerHTML = data;
+              el.removeAttribute("data-include-html");
+            });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
