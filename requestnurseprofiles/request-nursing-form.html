@@ -1,110 +1,223 @@
-<section id="request-nursing-form" style="padding: 80px 20px; background-color: #f8fafc; font-family: 'Source Sans Pro', sans-serif;">
-  <div style="max-width: 900px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; padding: 40px; box-shadow: 0 6px 18px rgba(0,0,0,0.05);">
-    
-    <h2 style="font-size: 2rem; font-weight: 700; color: #1e3a8a; margin-bottom: 10px;">
-      Submit Your Nursing Staffing Requirements
-    </h2>
-    <p style="color: #475569; margin-bottom: 30px;">Provide detailed information about your facility’s nursing needs and our team will begin your custom recruitment strategy.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Staffing Request</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Submit Staffing Request</h1>
 
-    <form>
-      <!-- Contact Info -->
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-        <input type="text" placeholder="Organization Name *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-        <input type="text" placeholder="Facility Name *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-      </div>
+      <form id="staffingForm">
+        <!-- Facility Information -->
+        <h2 class="title is-4 mt-5">Facility Information</h2>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-        <input type="text" placeholder="Contact Person Name *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-        <input type="text" placeholder="Job Title *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-      </div>
+        <div class="field"><label class="label">Organization Name</label><input class="input" type="text" name="Organization Name" required /></div>
+        <div class="field"><label class="label">Facility Name</label><input class="input" type="text" name="Facility Name" required /></div>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-        <input type="email" placeholder="Email Address *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-        <input type="tel" placeholder="Phone Number *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-      </div>
+        <div class="field">
+          <label class="label">Facility Type</label>
+          <div class="select is-fullwidth">
+            <select name="Facility Type" required>
+              <option disabled selected value="">Select</option>
+              <option>Public Hospital</option>
+              <option>Private Hospital</option>
+              <option>Long-Term Care</option>
+              <option>Clinic</option>
+              <option>Community Health</option>
+              <option>Mental Health Facility</option>
+              <option>Rehabilitation Center</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
 
-      <!-- Nursing Type -->
-      <div style="margin-bottom: 20px;">
-        <label style="display: block; font-weight: 600; margin-bottom: 5px;">Nursing Type Needed *</label>
-        <select required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-          <option value="">Select...</option>
-          <option>Registered Nurse (RN)</option>
-          <option>Licensed Practical Nurse (LPN)</option>
-          <option>Nurse Practitioner (NP)</option>
-          <option>Travel Nurse</option>
-          <option>Psychiatric Nurse (RPN)</option>
-        </select>
-      </div>
+        <div class="field"><label class="label">Contact Person Name</label><input class="input" type="text" name="Contact Person Name" required /></div>
+        <div class="field"><label class="label">Job Title</label><input class="input" type="text" name="Job Title" required /></div>
+        <div class="field"><label class="label">Email Address</label><input class="input" type="email" name="Email Address" required /></div>
+        <div class="field"><label class="label">Phone Number</label><input class="input" type="tel" name="Phone Number" required /></div>
 
-      <!-- Unit & Start -->
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-        <select required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-          <option value="">Unit / Department *</option>
-          <option>ICU</option>
-          <option>Emergency</option>
-          <option>Med-Surg</option>
-          <option>Long-Term Care</option>
-          <option>OR</option>
-          <option>PACU</option>
-          <option>Community Health</option>
-          <option>Mental Health</option>
-          <option>Other</option>
-        </select>
-        <input type="date" placeholder="Start Date Needed *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-      </div>
+        <div class="field"><label class="label">Street</label><input class="input" type="text" name="Street" required /></div>
+        <div class="field"><label class="label">City</label><input class="input" type="text" name="City" required /></div>
+        <div class="field"><label class="label">Province</label><input class="input" type="text" name="Province" required /></div>
+        <div class="field"><label class="label">Postal Code</label><input class="input" type="text" name="Postal Code" required /></div>
+        <label class="label">Website (optional)</label> <input class="input" type="url" name="Website" />
 
-      <!-- Positions & Duration -->
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
-        <input type="number" placeholder="Number of Positions *" required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-        <select required style="flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-          <option value="">Assignment Duration *</option>
-          <option>Permanent</option>
-          <option>1–3 months</option>
-          <option>3–6 months</option>
-          <option>6–12 months</option>
-          <option>1+ years</option>
-          <option>Flexible</option>
-        </select>
-      </div>
 
-      <!-- Urgency -->
-      <div style="margin-bottom: 20px;">
-        <label style="display: block; font-weight: 600; margin-bottom: 5px;">Urgency Level *</label>
-        <select required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-          <option value="">Select urgency...</option>
-          <option>Emergency (ASAP)</option>
-          <option>Urgent (Within 2 weeks)</option>
-          <option>Standard (Within 1 month)</option>
-          <option>Flexible (Within 3 months)</option>
-          <option>Future Planning</option>
-        </select>
-      </div>
+        <!-- Position Requirements -->
+        <h2 class="title is-4 mt-5">Position Requirements</h2>
 
-      <!-- Procurement -->
-      <div style="margin-bottom: 20px;">
-        <label style="display: block; font-weight: 600; margin-bottom: 5px;">Procurement Process *</label>
-        <select required style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;">
-          <option value="">Select...</option>
-          <option>Direct Hire</option>
-          <option>Vendor Registration Required</option>
-          <option>RFP Process</option>
-          <option>Already Approved Vendor</option>
-          <option>Unsure</option>
-        </select>
-      </div>
+        <div class="field">
+          <label class="label">Nursing Type Needed</label>
+          <div class="checkbox-group">
+           <div class="checkbox-group">
+  <label class="checkbox"><input type="checkbox" name="Nursing Type Needed[]" value="Registered Nurse (RN)" /> Registered Nurse (RN)</label>
+  <label class="checkbox"><input type="checkbox" name="Nursing Type Needed[]" value="Licensed Practical Nurse (LPN)" /> Licensed Practical Nurse (LPN)</label>
+  <label class="checkbox"><input type="checkbox" name="Nursing Type Needed[]" value="Nurse Practitioner (NP)" /> Nurse Practitioner (NP)</label>
+  <label class="checkbox"><input type="checkbox" name="Nursing Type Needed[]" value="Travel Nurse" /> Travel Nurse</label>
+  <label class="checkbox"><input type="checkbox" name="Nursing Type Needed[]" value="Psychiatric Nurse (RPN)" /> Psychiatric Nurse (RPN)</label>
+</div>
 
-      <!-- Consent -->
-      <div style="margin-bottom: 30px;">
-        <label style="display: flex; align-items: center;">
-          <input type="checkbox" required style="margin-right: 10px;"> 
-          I consent to being contacted about this recruitment request and certify that I have authority to make this request.
-        </label>
-      </div>
+          </div>
+        </div>
 
-      <!-- Submit -->
-      <button type="submit" style="background-color: #3366ff; color: white; padding: 14px 28px; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer;">
-        Submit Staffing Request
-      </button>
-    </form>
-  </div>
-</section>
+        <div class="field"><label class="label">Number of Positions</label><input class="input" type="number" name="Number of Positions" required /></div>
+
+        <div class="field">
+          <label class="label">Position Type</label>
+          <div class="control">
+            <label class="radio"><input type="radio" name="Position Type" value="Permanent Full-time" required /> Full-time</label>
+            <label class="radio"><input type="radio" name="Position Type" value="Permanent Part-time" /> Part-time</label>
+            <label class="radio"><input type="radio" name="Position Type" value="Temporary/Contract" /> Temporary</label>
+            <label class="radio"><input type="radio" name="Position Type" value="Per Diem" /> Per Diem</label>
+            <label class="radio"><input type="radio" name="Position Type" value="Travel Assignment" /> Travel</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Unit/Department</label>
+          <div class="select is-fullwidth">
+            <select name="Unit/Department" required>
+              <option disabled selected value="">Select</option>
+              <option>ICU</option><option>Emergency</option><option>Med-Surg</option><option>Long-Term Care</option>
+              <option>OR</option><option>PACU</option><option>Community Health</option><option>Mental Health</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Shift Requirements</label>
+          <div class="checkbox-group">
+            <label class="checkbox"><input type="checkbox" name="Shift Requirements[]" value="Days" /> Days</label>
+            <label class="checkbox"><input type="checkbox" name="Shift Requirements[]" value="Evenings" /> Evenings</label>
+            <label class="checkbox"><input type="checkbox" name="Shift Requirements[]" value="Nights" /> Nights</label>
+            <label class="checkbox"><input type="checkbox" name="Shift Requirements[]" value="Weekends" /> Weekends</label>
+            <label class="checkbox"><input type="checkbox" name="Shift Requirements[]" value="Rotating" /> Rotating</label>
+            <label class="checkbox"><input type="checkbox" name="Shift Requirements[]" value="On-call" /> On-call</label>
+          </div>
+        </div>
+
+        <div class="field"><label class="label">Start Date Needed</label><input class="input" type="date" name="Start Date Needed" required /></div>
+
+        <div class="field">
+          <label class="label">Assignment Duration</label>
+          <div class="select is-fullwidth">
+            <select name="Assignment Duration" required>
+              <option>Permanent</option><option>1-3 months</option><option>3-6 months</option>
+              <option>6-12 months</option><option>1+ years</option><option>Flexible</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Candidate Qualifications -->
+        <h2 class="title is-4 mt-5">Candidate Qualifications</h2>
+
+        <div class="field">
+          <label class="label">Salary/Hourly Rate Range</label>
+          <div class="select is-fullwidth">
+            <select name="Salary/Hourly Rate Range" required>
+              <option>$30-40/hr</option><option>$40-50/hr</option><option>$50-60/hr</option>
+              <option>$60-70/hr</option><option>$70+/hr</option>
+              <option>Salary $60K-80K</option><option>$80K-100K</option><option>$100K+</option><option>Negotiable</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Urgency & Timeline -->
+        <h2 class="title is-4 mt-5">Urgency & Timeline</h2>
+
+        <div class="field">
+          <label class="label">Urgency Level</label>
+          <div class="control">
+            <label class="radio"><input type="radio" name="Urgency Level" value="Emergency (ASAP)" required /> Emergency (ASAP)</label>
+            <label class="radio"><input type="radio" name="Urgency Level" value="Urgent (Within 2 weeks)" /> Urgent (Within 2 weeks)</label>
+            <label class="radio"><input type="radio" name="Urgency Level" value="Standard (Within 1 month)" /> Standard (Within 1 month)</label>
+            <label class="radio"><input type="radio" name="Urgency Level" value="Flexible (Within 3 months)" /> Flexible (Within 3 months)</label>
+            <label class="radio"><input type="radio" name="Urgency Level" value="Future Planning" /> Future Planning</label>
+          </div>
+        </div>
+
+        <!-- Procurement Info -->
+        <h2 class="title is-4 mt-5">Vendor/Procurement Info</h2>
+
+        <div class="field">
+          <label class="label">Procurement Process</label>
+          <div class="control">
+            <label class="radio"><input type="radio" name="Procurement Process" value="Direct Hire" required /> Direct Hire</label>
+            <label class="radio"><input type="radio" name="Procurement Process" value="Vendor Registration Required" /> Vendor Registration Required</label>
+            <label class="radio"><input type="radio" name="Procurement Process" value="RFP Process" /> RFP Process</label>
+            <label class="radio"><input type="radio" name="Procurement Process" value="Already Approved Vendor" /> Approved Vendor</label>
+            <label class="radio"><input type="radio" name="Procurement Process" value="Unsure" /> Unsure</label>
+          </div>
+        </div>
+
+        <!-- Consent -->
+        <div class="field mt-4">
+          <label class="checkbox">
+            <input type="checkbox" name="Agreement" value="Agreed" required />
+            I consent to being contacted about this recruitment request and certify that I have authority to make this request.
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <div class="field mt-5">
+         <button class="button is-primary" type="submit" style="background-color: #3366ff; color: white;">Submit Staffing Request</button>
+        </div>
+
+        <div id="messageBox" class="notification is-hidden mt-4"></div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("staffingForm");
+    const messageBox = document.getElementById("messageBox");
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwcYj7ZLepW24JcdqApSgb1jEM8HLCNsCoZeqrOJlUHd9zyj5ggrLCJE6q2LJSULwV_-Q/exec";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      messageBox.classList.remove("is-hidden");
+      messageBox.className = "notification is-info";
+      messageBox.textContent = "Submitting...";
+
+      const formData = new FormData(form);
+      const data = {};
+
+      for (let [key, value] of formData.entries()) {
+        const cleanKey = key.replace(/\[\]$/, ""); // Remove [] from checkbox names
+        if (data[cleanKey]) {
+          data[cleanKey] += `, ${value}`;
+        } else {
+          data[cleanKey] = value;
+        }
+      }
+
+      try {
+        const response = await fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+          messageBox.className = "notification is-success";
+          messageBox.textContent = result.message;
+          form.reset();
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (err) {
+        messageBox.className = "notification is-danger";
+        messageBox.textContent = "Error: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
