@@ -148,6 +148,40 @@
       });
     });
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const includeElements = document.querySelectorAll('[data-include-html]');
+    includeElements.forEach(el => {
+      const file = el.getAttribute("data-include-html");
+      if (file) {
+        fetch(file)
+          .then(response => response.ok ? response.text() : Promise.reject("Section not found."))
+          .then(html => {
+            el.innerHTML = html;
+            el.removeAttribute("data-include-html");
+
+            // ✅ Re-run any <script> tags in the included HTML
+            const temp = document.createElement("div");
+            temp.innerHTML = html;
+            const scripts = temp.querySelectorAll("script");
+
+            scripts.forEach(oldScript => {
+              const newScript = document.createElement("script");
+              if (oldScript.src) {
+                newScript.src = oldScript.src;
+              } else {
+                newScript.textContent = oldScript.textContent;
+              }
+              document.body.appendChild(newScript);
+            });
+          })
+          .catch(err => {
+            el.innerHTML = `<p style="color: red;">${err}</p>`;
+          });
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
