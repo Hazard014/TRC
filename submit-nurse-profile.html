@@ -109,7 +109,7 @@
   <div data-include-html="submitnurseprofile/how-it-works.html"></div>
 
   <!-- Section 4: Application Form -->
-  <div data-include-html="submitnurseprofile/nurse-profile-application.html"></div>
+  <div data-include-html="submitnurseprofile/nurse-profile-application-form.html"></div>
 
   <!-- Section 5: Confirmation Modal -->
   <div data-include-html="submitnurseprofile/modal-confirmation.html"></div>
@@ -134,6 +134,109 @@
       });
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const includes = document.querySelectorAll('[data-include-html]');
+    let loadedCount = 0;
+
+    includes.forEach(el => {
+      const file = el.getAttribute('data-include-html');
+      if (file) {
+        fetch(file)
+          .then(res => res.ok ? res.text() : Promise.reject('Section not found'))
+          .then(data => {
+            el.innerHTML = data;
+            el.removeAttribute('data-include-html');
+            loadedCount++;
+            if (loadedCount === includes.length) {
+              initNurseForm(); // ✅ Call form script AFTER all includes are done
+            }
+          });
+      }
+    });
+  });
+
+  function initNurseForm() {
+    const form = document.getElementById("nurseForm");
+    if (!form) return;
+
+    const resumeInput = document.getElementById("resumeFile");
+    const resumeFileName = document.getElementById("resumeFileName");
+    const messageBox = document.getElementById("messageBox");
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbw2RlGB44NXBxM07ry3xRzfLv1K-nM9MOYIJtvt8IWk_1ulh1vvAAjM_BxQWwh_SPRLQg/exec";
+
+    resumeInput.addEventListener("change", function () {
+      resumeFileName.textContent = this.files.length > 0 ? this.files[0].name : "No file selected";
+    });
+
+    function encodeFile(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const base64 = e.target.result.split(",")[1];
+          const mime = file.type;
+          resolve({
+            fileName: file.name,
+            mimeType: mime,
+            data: base64,
+          });
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      messageBox.className = "notification is-info";
+      messageBox.textContent = "Submitting...";
+      messageBox.classList.remove("is-hidden");
+
+      const formData = new FormData(form);
+      const data = {};
+
+      for (let [key, value] of formData.entries()) {
+        const cleanKey = key.replace(/\[\]$/, "");
+        if (data[cleanKey]) {
+          data[cleanKey] += `, ${value}`;
+        } else {
+          data[cleanKey] = value;
+        }
+      }
+
+      try {
+        const file = resumeInput.files[0];
+        if (!file) throw new Error("Resume is required.");
+
+        const fileData = await encodeFile(file);
+        data.fileData = fileData;
+
+        const response = await fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+        });
+
+        const result = await response.json();
+        if (result.status === "success") {
+          messageBox.className = "notification is-success";
+          messageBox.textContent = result.message;
+          form.reset();
+          resumeFileName.textContent = "No file selected";
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (err) {
+        messageBox.className = "notification is-danger";
+        messageBox.textContent = "Error: " + err.message;
+      }
+    });
+  }
+</script>
+
 
 </body>
 </html>
