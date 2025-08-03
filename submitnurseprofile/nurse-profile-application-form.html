@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Submit Your Nursing Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <style>
+      .section { padding: 2rem 1.5rem; }
+      .checkbox-group, .radio-group { margin-bottom: 1rem; }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Submit Your Nursing Profile</h1>
+        <p class="subtitle">Quick application to join our healthcare network</p>
+
+        <form id="nurseForm">
+          <!-- Contact Information -->
+          <h2 class="title is-4 mt-5">Contact Information</h2>
+          <div class="field is-horizontal">
+            <div class="field-body">
+              <div class="field">
+                <label class="label">First Name</label>
+                <div class="control">
+                  <input class="input" type="text" name="First Name" required />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Last Name</label>
+                <div class="control">
+                  <input class="input" type="text" name="Last Name" required />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Email Address</label>
+            <div class="control">
+              <input class="input" type="email" name="Email Address" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Phone Number</label>
+            <div class="control">
+              <input class="input" type="tel" name="Phone Number" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">City</label>
+            <div class="control">
+              <input class="input" type="text" name="City" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Province</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="Province" required>
+                  <option value="" disabled selected>Select Province</option>
+                  <option>BC</option><option>AB</option><option>SK</option><option>MB</option>
+                  <option>ON</option><option>QC</option><option>NB</option><option>NS</option>
+                  <option>PE</option><option>NL</option><option>YT</option><option>NT</option><option>NU</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nursing Qualifications -->
+          <h2 class="title is-4 mt-5">Nursing Qualifications</h2>
+
+          <div class="field">
+            <label class="label">Primary Nursing Type</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="Primary Nursing Type" required>
+                  <option value="" disabled selected>Select</option>
+                  <option>Registered Nurse (RN)</option>
+                  <option>Licensed Practical Nurse (LPN)</option>
+                  <option>Nurse Practitioner (NP)</option>
+                  <option>Travel Nurse</option>
+                  <option>Psychiatric Nurse (RPN)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">License Status</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="License Status" required>
+                  <option>Active</option>
+                  <option>Expired</option>
+                  <option>In Process</option>
+                  <option>Pending</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">License Issuing Province</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="License Issuing Province" required>
+                  <option>BC</option><option>AB</option><option>SK</option><option>MB</option>
+                  <option>ON</option><option>QC</option><option>NB</option><option>NS</option>
+                  <option>PE</option><option>NL</option><option>YT</option><option>NT</option><option>NU</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <h2 class="title is-4 mt-5">Education</h2>
+
+          <div class="field">
+            <label class="label">Highest Nursing Education</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="Highest Nursing Education" required>
+                  <option>Diploma</option>
+                  <option>Bachelor's (BSN)</option>
+                  <option>Master's</option>
+                  <option>PhD</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Was this education in Canada?</label>
+            <div class="control radio-group">
+              <label class="radio"><input type="radio" name="Highest Nursing Education - In Canada" value="Yes" required /> Yes</label>
+              <label class="radio"><input type="radio" name="Highest Nursing Education - In Canada" value="No" required /> No</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Nursing School</label>
+            <div class="control">
+              <input class="input" type="text" name="Nursing School" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Graduation Year</label>
+            <div class="control">
+              <input class="input" type="number" name="Graduation Year" min="1950" max="2099" required />
+            </div>
+          </div>
+
+          <!-- Professional Experience -->
+          <h2 class="title is-4 mt-5">Professional Experience</h2>
+
+          <div class="field">
+            <label class="label">Years of Nursing Experience</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="Years of Nursing Experience" required>
+                  <option>0-1</option><option>1-2</option><option>3-5</option>
+                  <option>5-10</option><option>10+ years</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Current Employment Status</label>
+            <div class="control radio-group">
+              <label class="radio"><input type="radio" name="Current Employment Status" value="Currently Employed" required /> Employed</label>
+              <label class="radio"><input type="radio" name="Current Employment Status" value="Unemployed" required /> Unemployed</label>
+              <label class="radio"><input type="radio" name="Current Employment Status" value="Student" required /> Student</label>
+              <label class="radio"><input type="radio" name="Current Employment Status" value="Other" required /> Other</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Current/Recent Employer</label>
+            <div class="control">
+              <input class="input" type="text" name="Current/Recent Employer" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Current/Recent Position</label>
+            <div class="control">
+              <input class="input" type="text" name="Current/Recent Position" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Employment Start Date</label>
+            <div class="control">
+              <input class="input" type="date" name="Employment Start Date" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Employment End Date</label>
+            <div class="control">
+              <input class="input" type="date" name="Employment End Date" />
+            </div>
+          </div>
+
+          <!-- Clinical Experience -->
+          <h2 class="title is-4 mt-5">Clinical Experience & Specialties</h2>
+          <div class="field">
+            <label class="label">Primary Practice Areas</label>
+            <div class="checkbox-group">
+             <label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="ICU" /> Intensive Care Unit (ICU)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Critical Care" /> Critical Care</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Emergency Department (ED)" /> Emergency Department (ED)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Medical-Surgical (Med-Surg)" /> Medical-Surgical (Med-Surg)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Long-Term Care (LTC)" /> Long-Term Care (LTC)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Rehabilitation" /> Rehabilitation</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Pediatrics" /> Pediatrics</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Neonatal ICU (NICU)" /> Neonatal ICU (NICU)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Pediatric ICU (PICU)" /> Pediatric ICU (PICU)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Operating Room (OR)" /> Operating Room (OR)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Post-Anesthesia Care Unit (PACU)" /> Post-Anesthesia Care Unit (PACU)</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Labor & Delivery" /> Labor & Delivery</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Maternity" /> Maternity</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Oncology" /> Oncology</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Cardiology" /> Cardiology</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Orthopedics" /> Orthopedics</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Neurology" /> Neurology</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Psychiatry/Mental Health" /> Psychiatry/Mental Health</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Community Health" /> Community Health</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Home Care" /> Home Care</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Dialysis" /> Dialysis</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Telemetry" /> Telemetry</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Step-Down Unit" /> Step-Down Unit</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Geriatrics" /> Geriatrics</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Palliative Care" /> Palliative Care</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Infection Control" /> Infection Control</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Case Management" /> Case Management</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Education" /> Education</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Administration" /> Administration</label>
+<label class="checkbox"><input type="checkbox" name="Primary Practice Areas" value="Other" /> Other</label>
+
+              <!-- Add more as needed -->
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Languages Spoken</label>
+            <div class="control">
+              <textarea class="textarea" name="Languages Spoken" required placeholder="Please list all languages you speak, separated by
+commas. Example: English, French, Mandarin, Punjabi, Spanish, Tagalog, Arabic"></textarea>
+            </div>
+          </div>
+
+          <!-- Work Preferences -->
+          <h2 class="title is-4 mt-5">Work Preferences</h2>
+
+          <div class="field">
+            <label class="label">Preferred Work Type</label>
+           
+              <div class="checkbox-group">
+  <label class="checkbox"><input type="checkbox" name="Preferred Work Type" value="Permanent Full-time" /> Permanent Full-time</label>
+  <label class="checkbox"><input type="checkbox" name="Preferred Work Type" value="Permanent Part-time" /> Permanent Part-time</label>
+  <label class="checkbox"><input type="checkbox" name="Preferred Work Type" value="Temporary" /> Temporary</label>
+  <label class="checkbox"><input type="checkbox" name="Preferred Work Type" value="Contract" /> Contract</label>
+  <label class="checkbox"><input type="checkbox" name="Preferred Work Type" value="Per Diem" /> Per Diem</label>
+  <label class="checkbox"><input type="checkbox" name="Preferred Work Type" value="Travel" /> Travel</label>
+</div>
+
+              
+              <!-- Add more as needed -->
+     
+          </div>
+
+          <div class="field">
+            <label class="label">Desired Schedule</label>
+            <div class="checkbox-group">
+              <label class="checkbox"><input type="checkbox" name="Desired Schedule" value="Days" /> Days</label>
+              <label class="checkbox"><input type="checkbox" name="Desired Schedule" value="Nights" /> Nights</label>
+               <label class="checkbox"><input type="checkbox" name="Desired Schedule" value="Weekends" /> Weekends</label>
+              <label class="checkbox"><input type="checkbox" name="Desired Schedule" value="Rotating" /> Rotating</label>
+              <!-- Add more as needed -->
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Full-time Availability</label>
+            <div class="control radio-group">
+              <label class="radio"><input type="radio" name="Full-time Availability" value="Yes" required /> Yes</label>
+              <label class="radio"><input type="radio" name="Full-time Availability" value="No" required /> No</label>
+              <label class="radio"><input type="radio" name="Full-time Availability" value="Flexible" required /> Flexible</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Overtime Availability</label>
+            <div class="control radio-group">
+              <label class="radio"><input type="radio" name="Overtime Availability" value="Yes" required /> Yes</label>
+              <label class="radio"><input type="radio" name="Overtime Availability" value="No" required /> No</label>
+              <label class="radio"><input type="radio" name="Overtime Availability" value="Limited" required /> Limited</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Travel Willingness</label>
+            <div class="control radio-group">
+              <label class="radio"><input type="radio" name="Travel Willingness" value="No Travel" required /> No Travel</label>
+              <label class="radio"><input type="radio" name="Travel Willingness" value="Local Only" required /> Local Only</label>
+              <label class="radio"><input type="radio" name="Travel Willingness" value="Provincial" required /> Provincial</label>
+              <label class="radio"><input type="radio" name="Travel Willingness" value="National" required /> National</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Relocation Willingness</label>
+            <div class="control radio-group">
+              <label class="radio"><input type="radio" name="Relocation Willingness" value="Yes" required /> Yes</label>
+              <label class="radio"><input type="radio" name="Relocation Willingness" value="No" required /> No</label>
+              <label class="radio"><input type="radio" name="Relocation Willingness" value="Depends on Opportunity" required /> Depends</label>
+            </div>
+          </div>
+
+          <!-- Availability -->
+          <h2 class="title is-4 mt-5">Current Status & Availability</h2>
+
+          <div class="field">
+            <label class="label">Available to Start</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="Available to Start" required>
+                  <option>Immediately</option>
+                  <option>Within 2 weeks</option>
+                  <option>Within 1 month</option>
+                  <option>Within 3 months</option>
+                  <option>Flexible</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- File Upload -->
+          <div class="field">
+            <label class="label">Upload Resume (PDF/DOC, max 5MB)</label>
+            <div class="file has-name is-fullwidth">
+              <label class="file-label">
+                <input class="file-input" type="file" name="resume" id="resumeFile" accept=".pdf,.doc,.docx" required />
+                <span class="file-cta"><span class="file-label">Choose a file…</span></span>
+                <span class="file-name" id="resumeFileName">No file selected</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Consent -->
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox" name="Agreement" value="Agreed" required />
+              I agree to be contacted about healthcare opportunities and certify that the information provided is accurate.
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <div class="field mt-4">
+            <button type="submit" class="button" style="background-color: #3366ff; color: white;">Submit Profile</button>
+          </div>
+
+          <div id="messageBox" class="notification is-hidden mt-4"></div>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      const form = document.getElementById("nurseForm");
+      const resumeInput = document.getElementById("resumeFile");
+      const resumeFileName = document.getElementById("resumeFileName");
+      const messageBox = document.getElementById("messageBox");
+
+      const scriptURL = "https://script.google.com/macros/s/AKfycbw2RlGB44NXBxM07ry3xRzfLv1K-nM9MOYIJtvt8IWk_1ulh1vvAAjM_BxQWwh_SPRLQg/exec";
+
+      resumeInput.addEventListener("change", function () {
+        resumeFileName.textContent = this.files.length > 0 ? this.files[0].name : "No file selected";
+      });
+
+      function encodeFile(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const base64 = e.target.result.split(",")[1];
+            const mime = file.type;
+            resolve({
+              fileName: file.name,
+              mimeType: mime,
+              data: base64,
+            });
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
+      form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  messageBox.className = "notification is-info";
+  messageBox.textContent = "Submitting...";
+  messageBox.classList.remove("is-hidden");
+
+  const formData = new FormData(form);
+  const data = {};
+
+  // STEP: Handle checkboxes and radios with same name
+  const fieldsToCollect = new Set();
+
+  form.querySelectorAll("input, select, textarea").forEach((input) => {
+    if (input.name) {
+      if (input.type === "checkbox" || input.type === "radio") {
+        fieldsToCollect.add(input.name);
+      } else {
+        data[input.name] = input.value;
+      }
+    }
+  });
+
+  for (const name of fieldsToCollect) {
+    const values = Array.from(form.querySelectorAll(`[name="${name}"]`))
+      .filter((el) => el.checked)
+      .map((el) => el.value);
+    if (values.length > 0) {
+      data[name] = values.join(", ");
+    }
+  }
+
+  try {
+    const file = resumeInput.files[0];
+    if (!file) throw new Error("Resume is required.");
+
+    const fileData = await encodeFile(file);
+    data.fileData = fileData;
+
+    const response = await fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+    });
+
+    const result = await response.json();
+    if (result.status === "success") {
+      messageBox.className = "notification is-success";
+      messageBox.textContent = result.message;
+      form.reset();
+      resumeFileName.textContent = "No file selected";
+    } else {
+      throw new Error(result.message);
+    }
+  } catch (err) {
+    messageBox.className = "notification is-danger";
+    messageBox.textContent = "Error: " + err.message;
+  }
+});
+
+    </script>
+  </body>
+</html>
